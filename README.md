@@ -1,6 +1,10 @@
 ### BASIC REACT SETUP
 Video Demo: 
 
+
+https://github.com/prachikaag/MoviesApp/assets/37405362/a2321fe2-ca65-4ee2-9152-16098db11f34
+
+
 ### 1. Create a react project folder and delecte all source files
      npx create-react-app flimflix
      npm start
