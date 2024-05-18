@@ -1,26 +1,21 @@
-BASIC REACT SETUP
+### BASIC REACT SETUP
+Video Demo: 
 
-1> Create a react project folder and delecte all source files
+### 1. Create a react project folder and delecte all source files
      npx create-react-app flimflix
      npm start
 
-2> Create index.js and App.js files to set our initial playground
+### 2. Create index.js and App.js files to set our initial playground
     index.js       
         const rootElement = document.getElementById("root");
         const root = ReactDOM.createRoot(rootElement);
         root.render(<App />);
     App.js
         import React from "react";
-        const App = () => {
-            return(
-                <h1>
-                Hi
-                </h1>
-            )
-        }
+        const App = () => {return(<>Hi</>)}
         export default App
 
-3> Create your API Key String inside your App.js file like
+### 3. Create your API Key String inside your App.js file like
     a) const API_URL = 'http://www.omdbapi.com?/apikey=[key]&';
     b) now use use the useEffect hook from react to call this function, don't forget to pass an empty array or this will run in an infinite loop
     c) write the API call in your App function
@@ -34,7 +29,7 @@ BASIC REACT SETUP
         },[])   
 
 
-4> Now we start building our front end
+### 4. Now we start building our front end
     a) build basic searchbar
     b) create some static data variable like
         const movie1 = {
@@ -49,14 +44,14 @@ BASIC REACT SETUP
         * for an onclick button add onClick={()=>{}} for change in state
         * fetch values from the api in out code like this -> {movie1.Year}, etc
 
-5> Now we learn to update this data dynamically for all movies using a custom component
+### 5. Now we learn to update this data dynamically for all movies using a custom component
     a) Take the component you want to repeat and add it in a seperate Movie.jsx file of it's own, pass in props i.e. the value you are destructuring in this code like
         const Movie = ( {movie1} ) => { return (<> {movie1.year} </>)}
         this is now our resuable component 
     b) now in the App.js file import the Movie file you just reacted and call the component like
         < Movie movie1={movie1} />
 
-6> Now we learn how to print multiple values from the API
+### 6. Now we learn how to print multiple values from the API
     a) In our App.js create this hook where allMovies is the variable which will store APIData and setAllMovies function is going to be used to update it
         const [allmovies, setAllMovies] = useState([]);
     b) now instead of console log pass the data from useEffect hook into our useState like:
@@ -74,7 +69,7 @@ BASIC REACT SETUP
             <div className="empty"> No movies Found </div>
         )}
 
-7> Now let's get the Search functionality working so we use another useEffect for this
+### 7. Now let's get the Search functionality working so we use another useEffect for this
     a) Declare the UseState variable and function first 
         const [searchTerm, setSearchTerm] = useState('');
     b) Now in the Input button update the value and onChange to allow the user type like
